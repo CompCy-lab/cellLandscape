@@ -6,6 +6,9 @@
   <img src="overview.png" width=50% height=50% />
 </p>
 
+## Description
+Here we can automatically summarize the overall cellular landscape of a sample profiled with a single-cell technology (e.g. CyTOF, Flow Cytometry, scRNA-seq) with a single feature vector. Such feature vectors can therefore be used in downstream tasks, such as outcome predictions. Our method, originally introduced in in our 2022 [ACM-BCB](https://dl.acm.org/doi/10.1145/3535508.3545538)] paper offers an unsupervised approach for summarizing nuances of cellular heterogeneity across multiple profiled samples. Our method is clustering and gating free and simply requires original data matrices of cells x features as inputs. Breiefly, the summarization works by computing a Kernel Mean Embedding on Random Fourier Features. 
+
 ## Installation
 Dependencies 
 * Python >= 3.6, anndata 0.7.6, numpy 1.22.4, scipy 1.7.1, tqdm 4.64.0, scanpy 1.8.1
