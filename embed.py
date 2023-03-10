@@ -16,16 +16,16 @@ def random_feats(X: np.ndarray,
     X: np.ndarray
         array of input data (dimensions = cells x features)
     gamma: Union([int, float]) (default = 1)
-        scale for standard deviation of the normal distribution 
-    frequency_seed: int (default = None):
-        random state parameter   
+        scale for standard deviation of the normal distribution  
     D: int (default = 2000):
-        dimensionality of the random Fourier frequency features, D/2 sin and D/2 cos bases  
+        dimensionality of the random Fourier frequency features, D/2 sin and D/2 cos basis  
+    frequency_seed: int (default = None):
+        random state parameter  
     ----------
 
     Returns
     phi: np.ndarray
-        random Fourier frequency features (dimensions = cells x 2000)
+        random Fourier frequency features (dimensions = cells x D)
     ----------
     """
     scale = 1 / gamma
@@ -56,14 +56,16 @@ def mean_embed(adata,
     adata: anndata.Anndata
         annotated data object (dimensions = cells x features)
     sample_set_key: str (default = None)
-        string referring to the key within adata.obs that contains the sample_sets to subsample
-            ~ if sample_set_key is None, will use all cells as a single sample_set 
+        string referring to the key within adata.obs that contains the samples to compute the embedding
+            ~ if sample_set_key is None, will use all cells as a single sample 
     gamma: Union([int, float]) (default = 1)
         scale for standard deviation of the normal distribution within random Fourier frequency feature computation
     frequency_seed: int (default = None):
         random state parameter   
     D: int (default = 2000)
-        dimensionality of the random Fourier frequency features, D/2 sin and D/2 cos bases 
+        dimensionality of the random Fourier frequency features, D/2 sin and D/2 cos basis 
+    n_jobs (default = -1)
+        number of tasks
     ----------
     
     Returns
