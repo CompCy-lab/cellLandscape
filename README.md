@@ -20,7 +20,7 @@ git clone https://github.com/CompCy-lab/cellLandscape.git
 ```
 
 ## Example usage
-To compute the kernel mean embedding, first read in a preprocessed `.h5ad` object. This dataset contains multiple profiled single-cell samples. 
+To compute the kernel mean embedding, first read in a preprocessed `.h5ad` object. This dataset contains multiple profiled single-cell samples. That is, the .h5ad file contains cells across all samples.
 
 ```python
 import scanpy as sc
